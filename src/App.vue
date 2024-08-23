@@ -8,14 +8,14 @@
             generateSuitableNumber()
         }"/>
       </div>
-      <div class="currentValue">
-        <div v-if="!gameStarted  " @click="startGame()" >
+      <div class="currentValue"  @click="startGame()">
+        <div v-if="!gameStarted  " >
           Start
         </div>
-        <div v-else-if="lostGame" @click="startGame()">
+        <div v-else-if="lostGame">
           You Lost... Shomehow...<br> Click To Restart
         </div>  
-        <div v-else-if="gameFinished()" @click="startGame()">
+        <div v-else-if="gameFinished()">
           You Won!<br> Click To Restart
         </div>       
         <div v-else>
@@ -40,8 +40,10 @@ const gameFinished = () => {
 }
 
 function startGame() {
-  clearGame()
-  generateSuitableNumber()
+  if(gameFinished() || lostGame.value || !gameStarted.value){
+    clearGame()
+    generateSuitableNumber()
+  }
 }
 function clearGame() {
   gameStarted.value = false
@@ -124,7 +126,13 @@ function checkAhead(index: number, number: number) {
 </script>
 
 <style scoped>
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
 main{
+  color: white;
   display: flex;
   flex-direction: column;
   align-self: center;
