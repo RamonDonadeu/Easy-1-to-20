@@ -133,6 +133,7 @@ body{
 }
 main{
   color: white;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-self: center;
