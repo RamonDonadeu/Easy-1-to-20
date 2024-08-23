@@ -135,6 +135,7 @@ main{
   color: white;
   background-color: black;
   display: flex;
+  margin: 2rem;
   flex-direction: column;
   align-self: center;
   justify-content: center;
