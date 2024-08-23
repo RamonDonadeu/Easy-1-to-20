@@ -54,7 +54,6 @@ function clearGame() {
 }
 function generateSuitableNumber() {
   let value = -1
-  let isSuitable = false
   const numbersTried = []
   do {
     
@@ -77,8 +76,6 @@ function generateSuitableNumber() {
 }
 
 function setClickableNumbers(number: number) {
-  let passedLowerBound = false
-  let passedUpperBound = false
   for (let i = 0; i < canBeClicked.value.length; i++) {
     canBeClicked.value[i] = numberList.value[i]===-1 && checkBehind(i, number) && checkAhead(i, number)
   }
