@@ -54,7 +54,6 @@ function clearGame() {
 }
 function generateSuitableNumber() {
   let value = -1
-  let isSuitable = false
   const numbersTried = []
   do {
     
@@ -76,15 +75,13 @@ function generateSuitableNumber() {
   
 }
 
-function setClickableNumbers(number) {
-  let passedLowerBound = false
-  let passedUpperBound = false
+function setClickableNumbers(number: number) {
   for (let i = 0; i < canBeClicked.value.length; i++) {
     canBeClicked.value[i] = numberList.value[i]===-1 && checkBehind(i, number) && checkAhead(i, number)
   }
 }
 
-function checkBehind(index, number) {
+function checkBehind(index: number, number: number) {
   if (index === 0) {
     if(numberList.value[index] === -1){
       return true
@@ -103,7 +100,7 @@ function checkBehind(index, number) {
   return true
 }
 
-function checkAhead(index, number) {
+function checkAhead(index: number, number: number) {
   if (index === 20) {
     if (numberList.value[index] === -1) {
       return true
