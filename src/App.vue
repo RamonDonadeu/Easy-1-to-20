@@ -140,7 +140,9 @@ main{
   width: 100%;
 }
 
-.body{
+.body{  
+  background-color: black;
+  margin: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
